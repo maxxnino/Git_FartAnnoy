@@ -12,6 +12,6 @@ public:
 		rect(0,0,Graphics::ScreenWidth - 1,Graphics::ScreenHeight - 1)
 	{}
 
-private:
+public:
 	RectF rect;
 };

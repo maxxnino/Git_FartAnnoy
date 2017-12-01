@@ -23,7 +23,9 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Graphics.h"
-
+#include "FrameTimer.h"
+#include "Brick.h"
+#include "Ball.h"
 class Game
 {
 public:
@@ -42,5 +44,9 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	FrameTimer ft;
+	RectF walls;
+	Brick brk;
+	Ball ball;
 	/********************************/
 };

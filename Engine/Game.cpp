@@ -24,7 +24,10 @@
 Game::Game( MainWindow& wnd )
 	:
 	wnd( wnd ),
-	gfx( wnd )
+	gfx( wnd ),
+	walls(0,0,Graphics::ScreenWidth - 1, Graphics::ScreenHeight - 1),
+	brk(RectF(50.0f,50.0f,75.0f,75.0f),Colors::Blue),
+	ball(Vec2(400.0f,300.0f),Vec2(100.0f,100.0f))
 {
 }
 
@@ -38,8 +41,13 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	float dt = ft.Mark();
+	ball.Update(dt);
+	ball.DoCollisionWalls(walls);
 }
 
 void Game::ComposeFrame()
 {
+	ball.Draw(gfx);
+	brk.Draw(gfx);
 }

@@ -15,6 +15,7 @@ public:
 	{}
 	RectF(const Vec2& topleft, const Vec2& bottomright);
 	RectF(const Vec2& topleft, float width, float height);
+	static RectF GetRectCenter(const Vec2 & center, float halfwidth, float halfheight);
 	bool isOverLap(const RectF& rect) const;
 
 public:
